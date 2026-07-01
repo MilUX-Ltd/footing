@@ -1,0 +1,23 @@
+<svg viewBox="0 0 1200 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Footing">
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#F7F6EB" stroke-width="1" opacity="0.05"/>
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="400" fill="#113308"/>
+  <rect width="1200" height="400" fill="url(#grid)"/>
+
+  <!-- ascending steps mark -->
+  <g>
+    <rect x="300" y="225" width="42" height="45" fill="#B5B171"/>
+    <rect x="342" y="180" width="42" height="90" fill="#D2C78D"/>
+    <rect x="384" y="110" width="42" height="160" fill="#F7F6EB"/>
+  </g>
+
+  <!-- wordmark -->
+  <text x="460" y="228" font-family="Arial, Helvetica, sans-serif" font-size="92" font-weight="700" fill="#F7F6EB" letter-spacing="2">FOOTING</text>
+
+  <!-- tagline -->
+  <text x="462" y="266" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="500" fill="#D2C78D" letter-spacing="4">FIND YOUR FOOTING WITH AI</text>
+</svg>
