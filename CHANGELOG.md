@@ -1,5 +1,14 @@
 # Footing changelog
 
+## 1.1.0, 2026-07-01
+
+Closes Step 4 of the original plan: a thin layer of universal business fundamentals, true regardless of sector, shipped in the repo rather than generated per install.
+
+- New `Resources/Business/Cash Flow Basics.md`: what to track, a simple runway calculation, and the early warning signs worth watching. General business practice, not sector-specific, no pre-populated numbers.
+- New `Resources/Business/Data Protection Basics.md`: a deliberately thin, plain-English UK GDPR orientation, the four lawful bases this pack's CRM already tracks, and when a DPIA is and isn't needed. Points to the `build-dpia` skill for anyone who needs the real thing rather than duplicating it. Checked against the ICO's April 2026 guidance update.
+- The CRM convention, the third item from the plan's original four-item list, was already complete as part of Step 1 (`CRM/CRM Guide.md`) plus the worked-example pages restored today; no new content needed there.
+- Kanban board basics, considered for this release, was cut from scope.
+
 ## 1.0.0, 2026-07-01
 
 Initial public release. Footing is the general-business sibling of Foothold: the same installable Obsidian and Cowork second-brain pack, built for established businesses, charities, and small firms introducing AI into how they already operate, rather than early-stage defence-sector founders.
