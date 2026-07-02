@@ -4,28 +4,43 @@
 
 # Footing
 
-"Get your footing" is the moment you stop slipping and stand on solid ground. For an established business bringing AI into how it already operates, that's the hard part. Not the tools themselves, but knowing where to plant your feet: what to hand over, what to keep to yourself, and how to set the whole thing up so it still makes sense in six months.
+"Get your footing" is the moment you stop slipping and stand on solid ground. Whether you're an established business bringing AI into how you already operate or a founder starting something new, that's the hard part. Not the tools themselves, but knowing where to plant your feet: what to hand over, what to keep to yourself, and how to set the whole thing up so it still makes sense in six months.
 
 Footing gives you that solid ground in an evening.
 
-It is an installable Obsidian vault pack for businesses, charities, and small firms putting AI to work for the first time. One command lays down a working second-brain: folder structure, page templates, skills, and a short set of reference pages researched for your specific sector at setup time. Walk into Monday with a knowledge system that already understands your business, your priorities, and the landscape you operate in.
+Footing is a ready-made **knowledge system for your business**: a set of organised, private files that live on your own computer, plus an AI assistant that reads and maintains them for you. In plain terms: everything about your business (your customers, your priorities, how you work, what's happening in your sector) captured once, in one place, so that the AI helping you actually knows your business rather than starting from scratch every conversation.
 
-The structure is built to slot into Anthropic's Cowork. A Footing vault opened in Obsidian, with Cowork running alongside, gives a small business something that, until recently, needed a dedicated team to put together.
+It runs on two applications: **Obsidian**, a free app for working with linked notes (think of it as a filing cabinet that shows you the connections), and **Claude**, the AI assistant, through its desktop app. Footing installs with one command, interviews you about your business, researches your specific sector, and hands you a working system the same evening.
 
 The operations still have to be run. Footing is the ground you run them from.
 
+## What changes in your first 30 days
+
+**Day 1.** The system knows your business: what you sell, who buys it, what sets you apart, what's on your plate this quarter, all captured in an hour's guided conversation. It has also researched your sector, your actual sector, live, and written you a short set of reference pages: the regulations that matter, the bodies that matter, what trips up outsiders.
+
+**Day 15.** Your day starts with a briefing written for you: what needs attention, what's stalled, who's gone quiet. Before every meeting, one command briefs you from your own relationship history; no more opening the call with "remind me where we got to". Your existing contacts are in, imported from whatever you use now, with the dead wood left behind.
+
+**Day 30.** Written drafts start sounding like you, because the system holds your actual voice. The process that eats most of your week is mapped, with an honest answer to which parts a machine could take. And your sector pages have refreshed themselves, so the landscape stays current without you watching it.
+
+The pattern underneath: every hour you give the system compounds, because nothing you tell it is ever asked for twice.
+
+**Want to look before you leap?** The [Vault Viewer](tools/vault-viewer/) lets you read a Footing knowledge base in your web browser: no install, no account, nothing to sign up for.
+
 ## What you get
 
-- A one-line setup prompt that installs the whole pack with no marketplace or plugin required.
-- A short, live-researched set of reference pages for your own sector, built at setup time and written straight into your vault, not shipped as generic pre-packaged content.
-- A re-runnable `rename` step that whitelabels the pack to your name.
-- A manual `update` command for pulling new content as Footing evolves.
-- Skills for the high-frequency adds: events, contacts, organisations.
-- A working set of business-method skills (prioritisation, positioning, research synthesis, and more), stripped of any sector-specific framing so they apply to whatever you do.
+- **A system that knows your sector from day one.** Reference pages researched live for your specific sector at setup, written into your own files, not generic content shipped to everyone.
+- **Your relationships, organised.** Import your contacts from whatever CRM or spreadsheet holds them now, triaged so only living relationships come in, then meeting prep and follow-up that draw on them.
+- **Your working week, supported.** A daily brief written for you each morning, a process-mapping method that finds what's worth automating, procedures captured so they survive handover, and an honest AI-readiness self-assessment with no scores and no sales pitch.
+- **A working method, not just software.** Guided onboarding, a first-week guide, and a page of the four habits that make the system compound rather than plateau.
+- **A pack that stays current.** One update command pulls improvements from this repository and never overwrites your own content without an explicit yes.
+
+## Isn't Copilot enough?
+
+Fair question, since you're probably paying for it already. Copilot and tools like it see one document or email at a time: useful in the moment, amnesiac between moments. The burden of context stays with you, every time. Footing works the other way round: your whole business context lives in your files, permanently, and every conversation starts already informed: your strategy, your customers, your sector, the state of every piece of work. One is a smart assistant with no memory of your business; the other is a system that accumulates institutional memory nobody can take with them when they leave. They're complementary, but they are not the same thing.
 
 ## Audience
 
-Owners, operators, and senior leaders at established businesses, charities, and small firms introducing AI into how they already work. Not early-stage founders starting from zero. Free and available to all. Hands-on setup and ongoing support are available at a modest cost.
+Owners, operators, and senior leaders at established businesses, charities, and small firms introducing AI into how they already work, and founders starting something new who want solid ground under it from day one. Setup asks which you are and shapes the system accordingly. No prior experience of Obsidian, Claude, or anything like them is assumed. Free and available to all. Hands-on onboarding and ongoing support are available from MilUX as a paid service; email for current pricing.
 
 ## Getting started
 
@@ -35,6 +50,19 @@ This is the install walkthrough. The whole thing takes about ten to fifteen minu
 
 - **A paid Claude subscription, with Cowork.** Cowork is Anthropic's desktop app for non-developers, and it runs inside a paid Claude plan. Sign up and subscribe at [claude.com](https://claude.com), then download the Claude desktop app; Cowork is a tab inside it. There is a running cost here: budget for one Claude subscription per person who will run the vault.
 - **Obsidian.** Free knowledge management app. Download from [obsidian.md](https://obsidian.md). Obsidian Sync, used for keeping a vault in step across devices or people, is a paid add-on; a free alternative is covered under Scaling across a team below.
+
+### What it costs, honestly
+
+| Item | Cost | Ongoing effort |
+|------|------|----------------|
+| Footing itself | Free, MIT licensed | — |
+| Claude subscription (with Cowork) | Your Claude plan, per person ([claude.com](https://claude.com) has current pricing) | — |
+| Obsidian | Free | — |
+| Obsidian Sync (optional, for multi-device) | Paid add-on; free alternative documented in the pack | — |
+| Keeping the system honest | — | Plan for about half an hour a week of review and correction, less as it learns |
+| Hands-on onboarding from MilUX (optional) | Paid; email matt@milux.co.uk for current pricing | — |
+
+The half-hour a week is the real cost, and it is also the mechanism: the corrections you make are how the system learns your business. Skip it and it plateaus; do it and it compounds.
 
 ### Step 1 — Run the setup
 
@@ -46,12 +74,13 @@ Fetch https://raw.githubusercontent.com/MilUX-Ltd/footing/main/footing/skills/fo
 
 The skill takes over from here. It will:
 
-1. **Lay down your vault.** Create a folder structure at `~/Obsidian/Footing/` (or a custom path if you specify one). Silent step, takes a few seconds.
-2. **Ask seven quick questions.** One at a time. Each has quick-pick options plus an "Other" option for free text. Skip any you want. The questions cover who you are, your sector, what you do and who buys it, what sets you apart, your voice, your current priorities, and your tool stack.
-3. **Research your sector.** If you answered the sector question, the skill runs a short, live round of research and writes a small set of reference pages, an overview and, where genuinely relevant, a framework or portal page, straight into your own vault. This is generated fresh for you at install time, not pulled from a shared library.
-4. **Offer a context drop.** One further question inviting you to paste links, upload files, or point at a local folder of source material. The more you give it, the more personalised your vault will be.
-5. **Build your canonical pages.** Silently. The skill drafts your operator profile, brand and strategy pages, email signature, and voice notes from the answers and corpus.
-6. **Offer to schedule updates.** Final question asking whether you want `/footing-update` to run automatically on a weekly or monthly cadence. Pick a cadence and the skill sets up the scheduled task for you; pick manual and you trigger updates yourself.
+1. **Ask one question first**: are you running something established, or starting something new? The answer shapes emphasis throughout; nothing is gated either way.
+2. **Lay down your vault.** Create a folder structure at `~/Obsidian/Footing/` (or a custom path if you specify one). Silent step, takes a few seconds.
+3. **Run a guided brain dump.** Two short forms covering seven areas: who you are, your sector, what you do and who buys it, what sets you apart, your voice, your current priorities, and your tool stack. Type, paste links, or upload documents against any of them; the single best input is a dictation transcript, rambled and untidied. The sector answer matters most, because it drives the next step.
+4. **Research your sector.** The skill runs a short, live round of research and writes a small set of reference pages, an overview and, where genuinely relevant, a framework or portal page, straight into your own vault. Generated fresh for you at install time, not pulled from a shared library.
+5. **Offer a context drop.** One further question inviting you to paste links, upload files, or point at a local folder of source material. The more you give it, the more personalised your vault will be.
+6. **Build your canonical pages.** Silently. The skill drafts your operator profile, brand and strategy pages, email signature, and voice notes from the answers and corpus.
+7. **Offer the running rhythm.** Whether to schedule `/footing-update` (weekly or monthly), a monthly refresh of your sector pages, a daily brief for weekday mornings, a monthly curation sweep, and a one-week check-in that asks what feels wrong and fixes it. All optional; all cancellable later.
 
 When the skill finishes, it tells you where the vault was created, what sector-landscape pages (if any) it built, and which schedule (if any) is now in place.
 
@@ -101,6 +130,10 @@ That tells it which of these situations each file is in:
 - **Conflict.** You've edited the file AND upstream has new changes. You're asked per file: take theirs (overwrite local), keep mine (skip), or merge (the skill proposes a combined version that integrates upstream's changes into your edited file and asks you to confirm before writing).
 
 Your personalised content is never overwritten without an explicit yes from you.
+
+## Yours, forever
+
+Worth stating plainly, because everyone has been burned by a tool that died: **your system does not depend on us.** It is a folder of plain text files on your own computer, MIT licensed. Updates arrive over a plain HTTPS request to this public repository, with no MilUX server, account, or subscription in the loop. If Footing stopped being maintained tomorrow, everything you have would keep working exactly as it does today: static, complete, and readable by Obsidian, the Vault Viewer, or any text editor on earth. There is no lock-in because there is nothing to be locked into.
 
 ## What's next
 
@@ -154,4 +187,4 @@ Email: matt@milux.co.uk. LinkedIn: [Matt Odell](https://www.linkedin.com/in/matt
 
 ## Provenance
 
-Footing is built by [MilUX](https://milux.co.uk), and is the general-business sibling of MilUX's defence-sector pack, Foothold. Its structure, conventions, and skills come from MilUX's own working vault. It improves with every contribution from people running it, if you find something worth fixing or adding, see [Share back](#share-back).
+Footing is built by [Matt Odell](https://www.linkedin.com/in/mattodell/), founder of [MilUX](https://milux.co.uk), a user-centred design consultancy, and is the general-business sibling of MilUX's defence-sector pack, Foothold. Its structure, conventions, and skills are not a product designed at a whiteboard: they come from MilUX's own working vault, the system the company actually runs its business on, exported and made installable. When something in Footing improves, it is usually because it broke or fell short in real use first. It improves with every contribution from people running it too; if you find something worth fixing or adding, see [Share back](#share-back).
