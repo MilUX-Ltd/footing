@@ -1,5 +1,9 @@
 # Footing changelog
 
+## 2.0.1, 2026-07-02
+
+- README gains "Prefer a different stack?": a short note that the pack is plain text and can be configured for open-source tools such as OpenCowork, self-hosted or already-owned models, and other sync arrangements, as bespoke work through MilUX.
+
 ## 2.0.0, 2026-07-02
 
 The onboarding release, matching Foothold 2.0.0 and a major version for the same reason: it changes what installing Footing feels like.
