@@ -1,5 +1,34 @@
 # Footing changelog
 
+## 1.5.0, 2026-07-02
+
+- New `How to Use This Vault.md` at the vault root: the four working habits that make the system compound. Brief Claude like an intern in its first week (it never forgets a good briefing, because the briefing lives in the vault); describe your processes, because a process you can describe is a process you can automate; watch for repeatable patterns worth turning into a skill or a schedule, and tell Claude to watch too; and review both the work (self-review against the brief before anything is called done) and the working (regular retrospectives whose output is always a permanent change: a rule, an amended skill, a corrected Context page). Home.md and the first-week guide both link to it.
+
+## 1.4.0, 2026-07-02
+
+Kills the write-three-lines daily-note ritual shipped earlier today in 1.3.0. Asking the user to report what happened yesterday is a scrum anti-pattern; the vault already knows.
+
+- New `Skills/meta-skills/daily-brief/`: writes the day's note as a brief FOR the user, generated from engagements, initiatives, items rolled forward from previous notes, upcoming events, and (where a calendar connector exists) today's meetings. Owns a `## Daily Brief` section per the Daily Guide convention and never touches the user's own writing. Hard cap of seven needs-attention items; a quiet day gets a short brief, honestly. MIT licensed, MilUX original.
+- `footing-setup` Phase C now offers to schedule `/daily-brief` for weekday mornings at 08:00.
+- `Getting Started - Your First Week.md` Day 3 rewritten: run the brief, schedule it if it earns its place. The standup ritual is gone.
+- `Daily Guide.md` updated: the note can be created by the brief each morning; the user writes everywhere else.
+
+## 1.3.0, 2026-07-02
+
+The first-week and living-intelligence release.
+
+- New `Getting Started - Your First Week.md` at the vault root: one small win a day (foundations, bringing existing relationships in, the daily-note habit, design system, sector pages), then week two onwards. Home.md now leads with it.
+- New `Skills/meta-skills/sector-scan/`: re-runs the install-time sector research against the sector the user chose at setup, updates `Intelligence/sector-landscape/` respecting the user's own edits, and writes a dated what-changed note. A quiet month is reported in two lines, not padded. MIT licensed, MilUX original.
+- `footing-setup` Phase C now offers to schedule `/sector-scan` monthly (2nd of the month, offset from footing-update on the 1st), and separately offers a one-off first-week check-in seven days after install. The sector chosen once at install becomes the standing search brief.
+- `Home.md` rewritten: the Dataview query suggestions are now live query blocks (engagements, initiatives, recent contacts, latest published), with a one-line pointer to installing the free Dataview plugin.
+- New `Resources/Ways of Working/Sync and Backup.md`: Obsidian Sync, git, iCloud, OneDrive/Dropbox/Google Drive and Syncthing compared honestly, including the iOS limitation on generic cloud drives, plus the sync-is-not-backup discipline.
+
+## 1.2.0, 2026-07-02
+
+The CRM bootstrap release. Footing's audience arrives with years of existing relationships; until now the only way in was one contact at a time.
+
+- New `Skills/crm-skills/import-relationships/`: seeds the vault CRM from wherever the relationships currently live. Connector-first (if the user's CRM has an MCP connector in Cowork, connect and read directly), CSV export as the second path (HubSpot's column set mapped without ceremony, any other CRM's export treated as a mapping to confirm), and a guided interview as the floor. Triage before import is the heart of it: active relationships get full pages, reference contacts get reference pages, and stale records stay behind, because importing two thousand dead contacts creates a vault nobody trusts. Preview gate before any batch write, lawful-basis tagging per the CRM convention, never edits or deletes existing pages. MIT licensed, MilUX original.
+
 ## 1.1.1, 2026-07-02
 
 Clears the `footing-update` skill's structural audit caution now the repo's live: `github.com/MilUX-Ltd/footing` confirmed public, under the `MilUX-Ltd` organisation, and resolving correctly. `footing-setup`, `footing-update`, and the `cyber-essentials-ready` manifest URL all verified by direct fetch against the live repo.

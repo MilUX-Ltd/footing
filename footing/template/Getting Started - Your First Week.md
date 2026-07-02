@@ -1,0 +1,53 @@
+---
+type: guide
+created: {{install_date}}
+last_reviewed: {{install_date}}
+tags: [getting-started, onboarding]
+---
+
+# Getting Started: Your First Week
+
+The vault is installed, your Context pages are written, and your sector reference pages were researched at setup. This page turns that into a working habit, one small win a day. Nothing here takes more than half an hour. Tick things off as you go; this page is yours to edit.
+
+If you asked setup to schedule a check-in, Cowork will nudge you in a week. If you did not, tell it now: "remind me in a week to review my Getting Started progress".
+
+## Day 1: check the foundations
+
+- [ ] Read `Context/{{pack_owner}}.md` and `Context/{{pack_org}}.md`. Onboarding wrote these from your answers; fix anything it got wrong. Everything agents do for you starts from these pages, so accuracy here pays compound interest.
+- [ ] Skim the four load-bearing Guides: Knowledge, Operations, Context, CRM. Ten minutes total; you now know where everything lives.
+
+## Day 2: bring your relationships in
+
+You have been trading for years; your relationships are your most valuable data. Pick the option that matches your reality:
+
+- **You run a CRM** (HubSpot, Salesforce, Pipedrive, Zoho, or a spreadsheet with pretensions). Run `/import-relationships`. If your CRM has a Cowork connector it reads directly; otherwise a CSV export works. It triages with you first, so only living relationships come in, not ten years of archaeology.
+- **You want to keep your current CRM.** Fine; the vault CRM then holds relationship knowledge (what was said, what matters to them, decisions) rather than duplicating pipeline. Add people as you meet them with `/add-contact`.
+- **It is all in your head.** Run `/import-relationships` anyway; its interview mode starts from "name your ten most important customers, suppliers and partners".
+
+## Day 3: your daily brief and your first meeting
+
+- [ ] Run `/daily-brief`. It reads everything you are working on (engagements, initiatives, items rolled from previous days, upcoming events) and writes today's note in `Daily/` for you. You read it; you do not fill in a form.
+- [ ] If it earns its place, put it on a schedule: "run /daily-brief every weekday at 08:00". The brief is then waiting before you are. Setup may already have offered this.
+- [ ] Before your next external meeting, run `/meeting-prep`. It reads your CRM and briefs you. This is the moment the vault starts paying you back.
+
+## Day 4: look the part
+
+- [ ] Run `/design-system-setup`. It builds your design system from your brand answers, so every document you produce from here looks like one organisation made it.
+- [ ] Check `Context/Brand.md` still sounds like you after onboarding.
+
+## Day 5: your sector, on tap
+
+- [ ] Read the sector reference pages setup researched for you in `Intelligence/sector-landscape/`. Correct anything that reads wrong; you know your sector better than a research pass does.
+- [ ] If you did not schedule `/sector-scan` at setup, consider it now: it re-runs that research monthly and tells you what changed, so the pages stay alive instead of ageing.
+
+## Week 2 and on
+
+- Read [[How to Use This Vault]]. Ten minutes on the four habits that decide whether this system compounds or plateaus.
+- Start one initiative in `Initiatives/`, not three. The Initiatives Guide shows the shape.
+- Try one business-method skill against a real question: `/swot-analysis`, `/pricing-strategy`, or `/pre-mortem` before a big decision.
+- Decide your [[Resources/Ways of Working/Sync and Backup|sync and backup]] approach before the vault becomes irreplaceable.
+- If someone sends you a skill, audit it with `/skill-safety-audit` before running it. Always.
+
+## When something feels missing
+
+Every folder has a Guide explaining what goes there and why. If the answer is not in a Guide, `CLAUDE.md` at the vault root carries the reasoning. And the pack updates over time: `/footing-update` pulls new content without touching yours.

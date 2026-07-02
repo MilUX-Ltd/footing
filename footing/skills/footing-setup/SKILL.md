@@ -354,6 +354,51 @@ Use AskUserQuestion with **one** question:
 - **Custom cadence**: read what the user typed in `Other`. If it parses to a clear cadence (e.g. "every Wednesday at 7am", "twice a month", "every two weeks"), construct the matching cron expression and create the task. If it's ambiguous, ask one clarifying question, then create. If still ambiguous, default to weekly and tell the user.
 - **No, I'll run it manually**: do not create a scheduled task. Briefly remind the user they can re-run `/footing-setup` later (or ask Cowork directly) to set up a schedule down the line.
 
+### Offer the monthly sector scan
+
+The sector reference pages in `Intelligence/sector-landscape/` were researched live during this install, against the sector and area the user named in the interview. They decay from today unless refreshed. Offer the refresh as a second scheduling question, via AskUserQuestion:
+
+- Header: `Sector scan`
+- Question: "Your sector pages were researched today and will age. Want me to schedule `/sector-scan` to re-run that research monthly and tell you what changed?"
+- Options:
+  - `Monthly` — "Run on the 2nd of each month"
+  - `No thanks` — "I'll run /sector-scan myself when I want a refresh"
+- `multiSelect: false`
+
+Acting on the answer:
+
+- **Monthly**: call `mcp__scheduled-tasks__create_scheduled_task` with cron `0 9 2 * *` (2nd of each month at 09:00, offset from footing-update on the 1st) and prompt `Run /sector-scan against the vault at <vault path>. Read the sector definition from .footing/config.yml and the Context pages, refresh Intelligence/sector-landscape/, and write a dated scan note summarising what changed. Vault writes only; nothing external.`
+- **No thanks**: no task. Mention the skill exists whenever they want a refresh.
+
+Record the choice under a `sector_scan:` key in the `schedule:` section of `.footing/config.yml`, same shape as the update schedule.
+
+### Offer the daily brief
+
+The pack ships a `daily-brief` skill that writes each day's note as a generated brief (engagements, initiatives, rolled-forward items, upcoming events) rather than a form the user fills in. Offer it via AskUserQuestion:
+
+- Header: `Daily brief`
+- Question: "Want your daily note written for you each weekday morning? `/daily-brief` reads what you're working on and has the day's brief waiting before you are."
+- Options:
+  - `Weekday mornings` — "Run at 08:00, Monday to Friday"
+  - `No thanks` — "I'll run /daily-brief myself when I want one"
+- `multiSelect: false`
+
+Acting on the answer:
+
+- **Weekday mornings**: call `mcp__scheduled-tasks__create_scheduled_task` with cron `0 8 * * 1-5` and prompt `Run /daily-brief against the vault at <vault path>. Write the Daily Brief section into today's note per the SKILL.md. Vault writes only; nothing external.`
+- **No thanks**: no task. The first-week guide's Day 3 introduces the skill anyway.
+
+Record the choice under a `daily_brief:` key in the `schedule:` section of `.footing/config.yml`, same shape as the update schedule.
+
+### Offer the first-week check-in
+
+The template ships with `Getting Started - Your First Week.md` at the vault root, and Home.md points at it. After the scheduling questions, offer one more thing (a plain question in conversation is fine; no AskUserQuestion needed): "Want me to check in with you in a week to see how the first-week list is going?"
+
+- **Yes**: call `mcp__scheduled-tasks__create_scheduled_task` with a one-off `fireAt` seven days from today at 09:00 and prompt `Open <vault path>/Getting Started - Your First Week.md, see which items are ticked, and ask the user how the first week went. Help with whichever unticked item they want to tackle next. This is a one-off check-in, not a recurring task.`
+- **No**: point out the guide's own first line tells them how to ask for a reminder later.
+
+Either way, close Phase C by telling the user their first move is the guide's Day 1: read their two Context pages.
+
 ### Record the choice in `.footing/config.yml`
 
 Whatever the user picks, append a `schedule:` section to `.footing/config.yml` so the choice is auditable and can be re-asked on re-run:
