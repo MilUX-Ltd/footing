@@ -1,5 +1,9 @@
 # Footing changelog
 
+## 1.1.1, 2026-07-02
+
+Clears the `footing-update` skill's structural audit caution now the repo's live: `github.com/MilUX-Ltd/footing` confirmed public, under the `MilUX-Ltd` organisation, and resolving correctly. `footing-setup`, `footing-update`, and the `cyber-essentials-ready` manifest URL all verified by direct fetch against the live repo.
+
 ## 1.1.0, 2026-07-01
 
 Closes Step 4 of the original plan: a thin layer of universal business fundamentals, true regardless of sector, shipped in the repo rather than generated per install.

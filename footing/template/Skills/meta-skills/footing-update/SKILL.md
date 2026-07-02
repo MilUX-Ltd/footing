@@ -15,7 +15,7 @@ USE WHEN the user wants to pull the latest content from the public Footing repo 
 
 This skill fetches directly from the public GitHub repo at `MilUX-Ltd/footing`. It does not rely on the local plugin install's template directory; that directory is only refreshed when the plugin upgrades, which is a slow path. Going to GitHub directly is fast and always current.
 
-> **Caution (from the 2026-07-01 skill-safety audit, verdict PASS WITH CAUTIONS):** every network call in this skill is correctly and exclusively scoped to `MilUX-Ltd/footing`, with no typosquat, unrelated org, shortener, or raw IP. That repo did not exist at the time of the audit, so the fetch targets could not be verified as genuinely under MilUX's control. Before this skill's first real run, confirm `github.com/MilUX-Ltd/footing` is live and genuinely MilUX's, and treat that first run as a checkpoint rather than assuming this audit covers it.
+> **Audit note (2026-07-01 skill-safety audit, verdict PASS WITH CAUTIONS):** every network call in this skill is correctly and exclusively scoped to `MilUX-Ltd/footing`, with no typosquat, unrelated org, shortener, or raw IP. The caution at the time was structural: the repo didn't exist yet, so the fetch targets couldn't be verified as genuinely under MilUX's control. **Checkpoint cleared, 2026-07-02.** `github.com/MilUX-Ltd/footing` is live, public, under the `MilUX-Ltd` organisation, and resolving correctly (`footing-setup`, `footing-update`, and the `cyber-essentials-ready` manifest URL all fetched and verified against the live repo). The PASS WITH CAUTIONS verdict now stands on its original merits with no open precondition.
 
 ## What changed from earlier versions
 
