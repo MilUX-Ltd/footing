@@ -129,6 +129,12 @@ That tells it which of these situations each file is in:
 
 Your personalised content is never overwritten without an explicit yes from you.
 
+## Where your data lives
+
+Your system will hold customer relationships, pricing and commercial detail, so this deserves a straight answer. Everything is files on your own computer, and nothing in the pack sends them anywhere: every skill is plain text you can read, none of them transmits data externally, and there is no MilUX server involved. When you work with the system through Cowork, the content you use in a session is processed by Claude under the terms of your Anthropic plan; read those terms and your plan's data settings before deciding what to keep in it, the same diligence you would apply to any supplier who processes your data.
+
+Some things should not go in regardless: client material under a confidentiality agreement the client would not expect you to process with a cloud AI tool, sensitive personal data without a proper basis, and records your regulator requires kept in a controlled system. The installed pack carries a fuller page on all of this, including how the setup sits alongside Cyber Essentials and what to say when a client's security questionnaire asks.
+
 ## Yours, forever
 
 Worth stating plainly, because everyone has been burned by a tool that died: your system does not depend on us. It is a folder of plain text files on your own computer, MIT licensed. Updates arrive over a plain HTTPS request to this public repository; there is no MilUX server or account in the loop. If Footing stopped being maintained tomorrow, everything you have would keep working exactly as it does today, and any text editor could still read it.
@@ -142,20 +148,25 @@ In the first hour, focus on:
 3. **Read the per-folder Guides.** Every folder has a `<Folder Name> Guide.md` at its root. Knowledge Guide, Operations Guide, Context Guide, and CRM Guide are the load-bearing ones.
 4. **Connect Cowork to your vault.** Point Cowork at your new vault folder. Cowork and Obsidian now work against the same files; agents you run in Cowork write into the vault, and you see them in Obsidian.
 
-## Scaling across a team
+## Running Footing in a small firm
 
-Footing is built for a single operator. The setup interview asks who *you* are, the pages are *your* profile, and the update model assumes one person reconciling their vault against upstream. That is the right starting point. It is worth knowing what changes when a second or third person comes in, before you get there.
+Footing is built for a single operator first, and that is still the right way in. But many of the businesses it suits are five or ten people, so here is the pattern that works at that size. It is how MilUX, the firm behind the pack, runs its own version.
 
-The main considerations:
+**Month one: one person.** Usually the owner, or whoever holds the customer relationships, because the daily brief, meeting prep and the sector pages serve that seat first. One Claude subscription. Prove the system earns its keep before involving anyone else.
 
-- **One shared vault, or one per person.** A single shared vault keeps everyone on the same canonical knowledge, at the cost of coordinating edits. Separate per-person vaults stay simple individually but drift apart over time. Most small teams want a shared vault for reference content (sector landscape, CRM, strategy) and accept that personal working notes can live wherever suits.
-- **How the vault syncs between people.** Obsidian Sync is the paid, no-setup option. A private Git repository is the free alternative and gives you version history, at the cost of a little more setup. Pick one before two people are editing, not after.
-- **Who curates canonical knowledge.** Name one curator. Footing's value is that its reference content is trustworthy; that holds only if changes go through someone. Without a curator, a shared vault fills with half-finished and contradictory pages.
-- **Write boundaries.** Decide who can write where, and keep agents on a tighter rein than people. A common pattern: everyone can read everything, drafts land in a staging area, and only the curator promotes a draft into the canonical folders.
-- **The update conflict model is per person.** `/footing-update` reconciles one vault against upstream. If several people share a vault, agree that only one person runs updates, and avoid two people editing the same file in the same window, or the three-way reconcile has more to untangle.
-- **One Claude subscription each.** Everyone running the vault through Cowork needs their own paid Claude plan. Factor that into the cost as the team grows.
+**Month two: a second seat and a named curator.** The curator decides what becomes permanent. The system's value rests on its content being trustworthy, and that holds only if changes go through someone. In a small firm the curator is often the office or ops manager rather than the owner, and the weekly half-hour of review belongs to them. Everyone else's drafts land in a staging folder; the curator promotes what deserves to stay.
 
-None of this is needed on day one. Set the vault up as a single operator, get value from it, and come back to this section when a second person is ready to join.
+**Who actually needs to pay.** Only people driving the system through Cowork need a Claude subscription. Colleagues who just need to read it need neither a subscription nor Obsidian: the free [Vault Viewer](tools/vault-viewer/) reads everything in a browser. A realistic pattern for a seven-person firm is two or three subscriptions and the viewer for everyone else.
+
+**What to bring in, and what to leave where it is.** Do not migrate your shared drive. The system is the working layer: strategy, relationships, engagements, your sector. Documents stay in the systems that already hold them, `/import-relationships` brings your living contacts across, and everything else earns its place one page at a time.
+
+The mechanics once two or more people share the system:
+
+- **Sync.** Obsidian Sync is the paid, no-setup option. A private Git repository is free and gives you version history, at the cost of a little setup. Pick one before two people are editing, not after; the pack's Sync and Backup page compares them.
+- **Write boundaries.** Everyone can read everything; drafts land in staging; only the curator writes to the canonical folders. Keep agents on a tighter rein than people.
+- **Updates.** `/footing-update` reconciles one vault against this repository. Agree that only the curator runs it, and avoid two people editing the same file in the same window.
+
+None of this is needed on day one. Set the system up as a single operator, get value from it, and come back to this section when the second person is ready.
 
 ## Tools
 
