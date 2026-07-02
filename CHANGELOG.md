@@ -1,5 +1,13 @@
 # Footing changelog
 
+## 2.0.2, 2026-07-02
+
+Answers the questions the ICP review surfaced, in Matt's words.
+
+- New README section, Support from MilUX: the first hour of setup consulting is complimentary, then the pack runs without us; AI enablement beyond the pack; trusted-partner referrals for Cyber Essentials and business setup; scaling support; and the UK-wide Claude associate network. The audience line and cost table updated to match.
+- The small-firm section gains "Bigger than a small firm?": the self-install is probably not for a fifty-plus organisation, the principles underneath it still stand, and getting an organisation that size AI-ready is delivery and enablement work MilUX does.
+- The Copilot objection section notes the pack adds the agentic side to AI you are probably already using, with policies, integration and orchestration worked out.
+
 ## 2.0.1, 2026-07-02
 
 - README gains "Prefer a different stack?": a short note that the pack is plain text and can be configured for open-source tools such as OpenCowork, self-hosted or already-owned models, and other sync arrangements, as bespoke work through MilUX.

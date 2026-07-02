@@ -34,11 +34,11 @@ If you want to see one before installing anything, the [Vault Viewer](tools/vaul
 
 ## Isn't Copilot enough?
 
-Fair question, since you may be paying for it already. Copilot works on the document or email in front of it and remembers nothing about your business between sessions. That puts the burden of context on you, every time. Footing keeps the context in your files: your strategy, your customers, your sector, the state of every piece of work. Every conversation starts from there, and knowledge captured this way stays when people leave. The two work fine side by side; they do different jobs.
+Fair question, since you may be paying for it already. Copilot works on the document or email in front of it and remembers nothing about your business between sessions. That puts the burden of context on you, every time. Footing keeps the context in your files: your strategy, your customers, your sector, the state of every piece of work. Every conversation starts from there, and knowledge captured this way stays when people leave. The two work fine side by side; they do different jobs. You are probably using AI somewhere already, and what this adds is the agentic side, with the policies, integration and orchestration already worked out.
 
 ## Audience
 
-Owners, operators, and senior leaders at established businesses, charities, and small firms introducing AI into how they already work, and founders starting something new who want solid ground under it from day one. Setup asks which you are and shapes the system accordingly. No prior experience of Obsidian, Claude, or anything like them is assumed. Free and available to all. Hands-on onboarding and ongoing support are available from MilUX as a paid service; email for current pricing.
+Owners, operators, and senior leaders at established businesses, charities, and small firms introducing AI into how they already work, and founders starting something new who want solid ground under it from day one. Setup asks which you are and shapes the system accordingly. No prior experience of Obsidian, Claude, or anything like them is assumed. Free and available to all, and your first hour of setup help is on us; see Support from MilUX below.
 
 ## Getting started
 
@@ -62,7 +62,7 @@ Claude and Obsidian are the pairing we build for, and the one this walkthrough a
 | Obsidian | Free | — |
 | Obsidian Sync (optional, for multi-device) | Paid add-on; free alternative documented in the pack | — |
 | Keeping the system honest | — | Plan for about half an hour a week of review and correction, less as it learns |
-| Hands-on onboarding from MilUX (optional) | Paid; email matt@milux.co.uk for current pricing | — |
+| Setup help from MilUX | First hour complimentary; further support by arrangement | — |
 
 The half-hour a week is the real cost. It is also how the system learns your business: the corrections you make are the teaching.
 
@@ -172,6 +172,8 @@ The mechanics once two or more people share the system:
 
 None of this is needed on day one. Set the system up as a single operator, get value from it, and come back to this section when the second person is ready.
 
+**Bigger than a small firm?** If you're at fifty, a hundred, or more people, this self-install is probably not for you, but everything underneath it still stands. The same principles of integration, orchestration and knowledge management apply at scale; getting an organisation of that size AI-ready is delivery and enablement work rather than a pack, and it's work MilUX does. Get in touch.
+
 ## Tools
 
 Standalone tools that ship with Footing but install nothing live in [`tools/`](tools/).
@@ -191,6 +193,17 @@ Email: matt@milux.co.uk. LinkedIn: [Matt Odell](https://www.linkedin.com/in/matt
 **Obsidian doesn't see the vault** — Make sure you point "Open folder as vault" at the Footing root, not at a subfolder.
 
 **Anything else** — Email Matt at matt@milux.co.uk or open an issue at https://github.com/MilUX-Ltd/footing/issues.
+
+## Support from MilUX
+
+**Your first hour is on us.** An hour of complimentary consulting to help you set up, configure, and ask anything. After that you should be able to crack on without us; the pack is built to run that way. Email matt@milux.co.uk to book it.
+
+Beyond the pack, a few things people ask for:
+
+- **AI enablement.** If you want support taking AI further than the pack (integration with your other systems, orchestration, working policies for agents), MilUX does that work. The offering is still taking shape, so the conversation is free and honest.
+- **Cyber Essentials and business setup.** We don't do certification ourselves, but we have trusted partners who do, and we'll happily refer you.
+- **Scaling.** When you outgrow the single-operator setup, we can help you scale the tools you've adopted or move to ones more appropriate to your size.
+- **Someone nearby.** MilUX has a network of Claude associates dotted around the United Kingdom.
 
 ## Help
 
