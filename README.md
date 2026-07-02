@@ -16,27 +16,25 @@ The operations still have to be run. Footing is the ground you run them from.
 
 ## What changes in your first 30 days
 
-**Day 1.** The system knows your business: what you sell, who buys it, what sets you apart, what's on your plate this quarter, all captured in an hour's guided conversation. It has also researched your sector, your actual sector, live, and written you a short set of reference pages: the regulations that matter, the bodies that matter, what trips up outsiders.
+**Day 1.** The system knows your business: what you sell, who buys it, what sets you apart, what is on your plate this quarter. Getting that in takes about an hour of guided conversation. It has also researched your sector and written you a short set of reference pages covering the regulation and bodies that matter, and what trips up outsiders.
 
-**Day 15.** Your day starts with a briefing written for you: what needs attention, what's stalled, who's gone quiet. Before every meeting, one command briefs you from your own relationship history; no more opening the call with "remind me where we got to". Your existing contacts are in, imported from whatever you use now, with the dead wood left behind.
+**Day 15.** Your day starts with a briefing written for you: what needs attention, what has stalled, who has gone quiet. Before a meeting, one command briefs you from your own relationship history; no more opening the call with "remind me where we got to". Your existing contacts are in, imported from whatever you use now, with the dead wood left behind.
 
-**Day 30.** Written drafts start sounding like you, because the system holds your actual voice. The process that eats most of your week is mapped, with an honest answer to which parts a machine could take. And your sector pages have refreshed themselves, so the landscape stays current without you watching it.
+**Day 30.** Written drafts are starting to sound like you, because the system holds real samples of your writing. The process that eats most of your week is mapped, with an honest answer about which parts a machine could take. Your sector pages have refreshed themselves.
 
-The pattern underneath: every hour you give the system compounds, because nothing you tell it is ever asked for twice.
-
-**Want to look before you leap?** The [Vault Viewer](tools/vault-viewer/) lets you read a Footing knowledge base in your web browser: no install, no account, nothing to sign up for.
+If you want to see one before installing anything, the [Vault Viewer](tools/vault-viewer/) reads a Footing knowledge base in your web browser. No install, no account.
 
 ## What you get
 
-- **A system that knows your sector from day one.** Reference pages researched live for your specific sector at setup, written into your own files, not generic content shipped to everyone.
-- **Your relationships, organised.** Import your contacts from whatever CRM or spreadsheet holds them now, triaged so only living relationships come in, then meeting prep and follow-up that draw on them.
-- **Your working week, supported.** A daily brief written for you each morning, a process-mapping method that finds what's worth automating, procedures captured so they survive handover, and an honest AI-readiness self-assessment with no scores and no sales pitch.
-- **A working method, not just software.** Guided onboarding, a first-week guide, and a page of the four habits that make the system compound rather than plateau.
-- **A pack that stays current.** One update command pulls improvements from this repository and never overwrites your own content without an explicit yes.
+- Reference pages researched for your sector at setup and written into your own files, not generic content shipped to everyone.
+- Your contacts imported from whatever CRM or spreadsheet holds them now, triaged so only living relationships come in, then meeting prep that draws on them.
+- A daily brief written for you each morning, process mapping that finds what is worth automating, procedures captured so they survive handover, and an AI-readiness self-assessment with no scores and no sales pitch.
+- Guided onboarding, a first-week guide, and a short page on the working habits that make the system improve with use.
+- One update command that pulls improvements from this repository without overwriting your own content.
 
 ## Isn't Copilot enough?
 
-Fair question, since you're probably paying for it already. Copilot and tools like it see one document or email at a time: useful in the moment, amnesiac between moments. The burden of context stays with you, every time. Footing works the other way round: your whole business context lives in your files, permanently, and every conversation starts already informed: your strategy, your customers, your sector, the state of every piece of work. One is a smart assistant with no memory of your business; the other is a system that accumulates institutional memory nobody can take with them when they leave. They're complementary, but they are not the same thing.
+Fair question, since you may be paying for it already. Copilot works on the document or email in front of it and remembers nothing about your business between sessions. That puts the burden of context on you, every time. Footing keeps the context in your files: your strategy, your customers, your sector, the state of every piece of work. Every conversation starts from there, and knowledge captured this way stays when people leave. The two work fine side by side; they do different jobs.
 
 ## Audience
 
@@ -62,7 +60,7 @@ This is the install walkthrough. The whole thing takes about ten to fifteen minu
 | Keeping the system honest | — | Plan for about half an hour a week of review and correction, less as it learns |
 | Hands-on onboarding from MilUX (optional) | Paid; email matt@milux.co.uk for current pricing | — |
 
-The half-hour a week is the real cost, and it is also the mechanism: the corrections you make are how the system learns your business. Skip it and it plateaus; do it and it compounds.
+The half-hour a week is the real cost. It is also how the system learns your business: the corrections you make are the teaching.
 
 ### Step 1 — Run the setup
 
@@ -80,7 +78,7 @@ The skill takes over from here. It will:
 4. **Research your sector.** The skill runs a short, live round of research and writes a small set of reference pages, an overview and, where genuinely relevant, a framework or portal page, straight into your own vault. Generated fresh for you at install time, not pulled from a shared library.
 5. **Offer a context drop.** One further question inviting you to paste links, upload files, or point at a local folder of source material. The more you give it, the more personalised your vault will be.
 6. **Build your canonical pages.** Silently. The skill drafts your operator profile, brand and strategy pages, email signature, and voice notes from the answers and corpus.
-7. **Offer the running rhythm.** Whether to schedule `/footing-update` (weekly or monthly), a monthly refresh of your sector pages, a daily brief for weekday mornings, a monthly curation sweep, and a one-week check-in that asks what feels wrong and fixes it. All optional; all cancellable later.
+7. **Offer the running rhythm.** Whether to schedule `/footing-update` (weekly or monthly), a monthly refresh of your sector pages, a daily brief on weekday mornings, a monthly curation sweep, and a one-week check-in. Everything is optional and can be cancelled later.
 
 When the skill finishes, it tells you where the vault was created, what sector-landscape pages (if any) it built, and which schedule (if any) is now in place.
 
@@ -133,7 +131,7 @@ Your personalised content is never overwritten without an explicit yes from you.
 
 ## Yours, forever
 
-Worth stating plainly, because everyone has been burned by a tool that died: **your system does not depend on us.** It is a folder of plain text files on your own computer, MIT licensed. Updates arrive over a plain HTTPS request to this public repository, with no MilUX server, account, or subscription in the loop. If Footing stopped being maintained tomorrow, everything you have would keep working exactly as it does today: static, complete, and readable by Obsidian, the Vault Viewer, or any text editor on earth. There is no lock-in because there is nothing to be locked into.
+Worth stating plainly, because everyone has been burned by a tool that died: your system does not depend on us. It is a folder of plain text files on your own computer, MIT licensed. Updates arrive over a plain HTTPS request to this public repository; there is no MilUX server or account in the loop. If Footing stopped being maintained tomorrow, everything you have would keep working exactly as it does today, and any text editor could still read it.
 
 ## What's next
 
@@ -187,4 +185,4 @@ Email: matt@milux.co.uk. LinkedIn: [Matt Odell](https://www.linkedin.com/in/matt
 
 ## Provenance
 
-Footing is built by [Matt Odell](https://www.linkedin.com/in/mattodell/), founder of [MilUX](https://milux.co.uk), a user-centred design consultancy, and is the general-business sibling of MilUX's defence-sector pack, Foothold. Its structure, conventions, and skills are not a product designed at a whiteboard: they come from MilUX's own working vault, the system the company actually runs its business on, exported and made installable. When something in Footing improves, it is usually because it broke or fell short in real use first. It improves with every contribution from people running it too; if you find something worth fixing or adding, see [Share back](#share-back).
+Footing is built by [Matt Odell](https://www.linkedin.com/in/mattodell/), founder of [MilUX](https://milux.co.uk), a user-centred design consultancy, and is the general-business sibling of MilUX's defence-sector pack, Foothold. The structure, conventions, and skills come from MilUX's own working vault: the system the company runs its business on, exported and made installable. When something in Footing improves, it is usually because it broke or fell short in real use first. It also improves with contributions from people running it; if you find something worth fixing or adding, see [Share back](#share-back).
