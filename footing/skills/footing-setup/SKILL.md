@@ -1,6 +1,6 @@
 ---
 name: footing-setup
-description: Install Footing — bootstrap the vault structure and run a guided brain-dump onboarding. Fetches the latest template directly from the public Footing GitHub repo, creates folders at the user's chosen path, substitutes placeholders, elicits the user's context through two rich forms (with a plain-question fallback where forms aren't available, and a sector category that triggers live sector-landscape research), and offers to schedule `/footing-update` on a weekly or monthly cadence. Use when the user says "set up Footing", "install Footing", "onboard me", or runs /footing-setup. Does NOT require terminal access.
+description: Install Footing — bootstrap the vault structure and run a guided brain-dump onboarding. Installs from the template bundled inside this plugin (no network or GitHub API needed), creates folders at the user's chosen path, substitutes placeholders, elicits the user's context through two rich forms (with a plain-question fallback where forms aren't available, and a sector category that triggers live sector-landscape research), and offers to schedule `/footing-update` on a weekly or monthly cadence. Use when the user says "set up Footing", "install Footing", "onboard me", or runs /footing-setup. Does NOT require terminal access.
 audited: 2026-07-02
 audit_verdict: pass
 audited_with: skill-safety-audit v3
@@ -9,15 +9,15 @@ maintainer: MilUX
 license: MIT
 ---
 
-# Footing — Install and Onboarding (GitHub fetch)
+# Footing — Install and Onboarding (bundled template)
 
 USE WHEN the user runs `/footing-setup` or asks to install Footing, set up a new pack, or onboard themselves into a fresh Footing vault.
 
-This skill fetches directly from the public GitHub repo at `MilUX-Ltd/footing`. It does not rely on the local plugin install's template directory, so installs are always against the latest published content.
+This skill installs from the template bundled inside this plugin, a sibling of the `skills/` folder this SKILL.md lives in. The install needs no network, no terminal beyond the file tools, and no GitHub API. The plugin is the versioned delivery artifact: whatever version of Footing the user installed is exactly what they get. Freshness beyond that is handled by `/footing-update`, which reconciles the vault to the latest published content on demand and on the schedule offered in Phase C. Setup is deliberately not a network operation, so it can't stall on an unreachable or rate-limited GitHub, and there is no separate manifest or offline artifact to drift out of step with the template. Phase B2's sector research is the one exception: it is genuinely live, because no template could pre-carry every sector's landscape.
 
 Six-phase process:
 
-- **Phase A: Bootstrap.** Silent. Resolve target path, fetch the template tree from GitHub, substitute placeholders, write files.
+- **Phase A: Bootstrap.** Silent. Resolve target path, read the template bundled with this plugin, substitute placeholders, write files.
 - **Phase B: Onboarding.** A guided brain dump across seven categories, rendered as two rich forms (question-based fallback where forms aren't available).
 - **Phase B+: Context drop.** One optional question inviting files, links, or folder paths to deepen personalisation.
 - **Phase B2: Sector research.** Uses the sector answer from Phase B to research and write a small set of sector-landscape reference pages into the user's own vault, live at install time.
@@ -49,7 +49,7 @@ If the user picks `Refresh my context`, do not re-run the interview from a blank
 
 ## Phase A: Bootstrap
 
-Phase A is fully automated. No user input. Lay down the vault structure from the latest GitHub state, then move to Phase B.
+Phase A is fully automated. No user input. Lay down the vault structure from the template bundled with this plugin, then move to Phase B.
 
 ### Step A.1: Resolve target directory
 
@@ -57,37 +57,27 @@ Default target: `~/Obsidian/{{pack_name}}/`. If `{{pack_name}}` is not yet set, 
 
 If the target directory already contains files, verify with the user before continuing. Do not overwrite without consent.
 
-### Step A.2: Fetch the latest file tree from GitHub
+### Step A.2: Locate the bundled template and enumerate its files
 
-Call the GitHub tree API:
+The template ships inside this plugin at `<plugin-root>/template/`, a sibling of the `skills/` folder this SKILL.md lives in. Find it, do not fetch it.
 
-```
-GET https://api.github.com/repos/MilUX-Ltd/footing/git/trees/main?recursive=1
-```
+1. Locate `TEMPLATE_ROOT`. Glob for the template's root marker under the Claude plugins directory: `~/.claude/plugins/**/footing/template/CLAUDE.md`. The directory containing the match is `TEMPLATE_ROOT`. If Glob returns more than one match (for example a `synced/` copy alongside another), prefer the one whose plugin manifest (`../.claude-plugin/plugin.json`, a sibling of `template/`) carries the highest `version`; if no manifest is present, take the most recently modified match. If Glob returns nothing, the plugin install is broken: tell the user the Footing plugin's bundled template can't be found and stop; do not fall back to a network fetch.
+2. Enumerate every file under `TEMPLATE_ROOT` with `Glob('**/*', TEMPLATE_ROOT)`. This is the full shipping list in one pass. Ignore `.DS_Store` and any other OS cruft.
 
-Use the WebFetch tool. Public repo, no auth required.
+### Step A.3: Read, substitute, and write the template
 
-Filter the response to entries where `type == "blob"` and `path` starts with `footing/template/`.
+For each shipping file enumerated in Step A.2:
 
-### Step A.3: Fetch and write the template
-
-For each shipping file (collected in Step A.2):
-
-1. Compute the corresponding target path. Strip the `footing/template/` prefix from the GitHub path.
+1. Compute the corresponding target path. Strip the `TEMPLATE_ROOT` prefix so the path is vault-relative.
 2. Apply placeholder substitution to the filename (any `{{...}}` token gets replaced with the value the user provides in Phase B, or a sensible default).
-3. Fetch the raw content from GitHub:
-
-   ```
-   GET https://raw.githubusercontent.com/MilUX-Ltd/footing/main/<full-path>
-   ```
-
+3. Read the file content directly from the bundled template with the Read tool (or `cat` via Bash for binary assets).
 4. Apply placeholder substitution to the file content.
 5. Create any missing parent directories at the target.
 6. Write the file.
 
 ### Step A.3b: Create the structural folders
 
-Git does not carry empty directories, so the tree fetch only creates folders that contain files. The vault's skeleton includes deliberately-empty folders that must exist from day one. Create each of these explicitly (harmless if a fetched file already created it):
+Git carries no empty directories, so the bundled template only contains folders that hold files, and the Step A.2 enumeration only recreates those. The vault's skeleton includes deliberately-empty folders that must exist from day one. Create each of these explicitly (harmless if a written file already created it):
 
 ```
 CRM/contacts/reference contacts
@@ -111,16 +101,16 @@ Daily
 
 This list is canonical: if the template's structure changes, this list changes with it in the same release.
 
-Order doesn't matter; the tree fetch gives you the full list in one call, then per-file fetches can run in parallel where convenient.
+Order doesn't matter; the Glob in Step A.2 gives you the full list in one pass, then the per-file reads and writes can run in parallel where convenient.
 
 ### Step A.4: Write `.footing/config.yml`
 
-Create `.footing/config.yml` at the target root with the substitution values used **and** a baseline `last_known_shas:` map keyed by vault-relative path, set to the GitHub blob SHA each file came from in the tree fetch:
+Create `.footing/config.yml` at the target root with the substitution values used **and** a baseline `last_known_shas:` map keyed by vault-relative path, set to the git blob SHA of each source file in the bundled template:
 
 ```yaml
 footing:
   installed_at: <today's ISO date>
-  version: <from footing/.claude-plugin/plugin.json at latest commit, if present>
+  version: <from the bundled plugin's .claude-plugin/plugin.json, a sibling of TEMPLATE_ROOT, if present>
   last_synced: <today's ISO date>
   pack_name: <value>
   pack_slug: <value>
@@ -134,10 +124,12 @@ footing:
   sector: <value from Phase B Q2>
 
 last_known_shas:
-  Knowledge/rules.md: <sha from tree fetch>
-  Knowledge/tagging-policy.md: <sha from tree fetch>
+  Knowledge/rules.md: <blob sha of the source file>
+  Knowledge/tagging-policy.md: <blob sha of the source file>
   # ...one entry per shipping file, keyed by post-substitution vault-relative path
 ```
+
+Compute each SHA from the **source** template file (before placeholder substitution) with `git hash-object <path>` in Bash. This is the same blob SHA GitHub records for that file, so the baseline is identical to what a tree fetch would have written and `/footing-update`'s three-way reconcile keeps working unchanged. If `git` is unavailable, compute the blob SHA directly: `sha1( "blob " + <byte-length> + "\0" + <file-bytes> )`. Key each entry by the post-substitution vault-relative path, so it matches the file as written.
 
 The SHA map is the source of truth for the three-way reconcile in future `/footing-update` runs. It tells the update skill exactly which version each file is "at" when the user runs it, so the skill can distinguish between an unedited file the user is happy to overwrite and a file the user has personalised.
 
@@ -495,7 +487,7 @@ Tell the user:
 
 ## Guidelines
 
-- Always fetch from GitHub, never from the local plugin install's template directory. The plugin only delivers the skills; GitHub is the source of truth for content.
+- Install from the template bundled in this plugin, never over the network. The plugin delivers both the skills and the template; setup is an offline, deterministic operation. `/footing-update` is the one path that talks to GitHub, and it reconciles the vault to the latest published content after install and on schedule. Phase B2's sector research is the sole live step, and it writes only into the user's own vault.
 - Phase A is fully silent. No user input.
 - Phase B is seven categories elicited as a brain dump: two rich forms in Cowork, seven sequential AskUserQuestions as the fallback. Bullets are inspiration, not required fields. No follow-ups between categories or forms.
 - Recommend dictation transcripts explicitly; they are the highest-yield input and most users won't think of it unprompted.
