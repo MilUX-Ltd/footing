@@ -1,5 +1,20 @@
 # Footing changelog
 
+## 2.2.0, 2026-10-15
+
+Brings the vault up to how a small firm actually keeps one going: a template for every kind of note, a one-minute Obsidian set-up so new notes and files land in the right place, and Guides that all follow the same shape. Run `/footing-update` to bring it in; nothing you have written is overwritten without your say.
+
+- **Note templates.** A new `Templates/` folder holds a template for contacts, organisations, customer engagements, initiatives, ideas, daily notes, weekly reviews, meetings, marketing pieces and services. Title and date fields are left blank for you to fill in.
+- **A one-minute Obsidian set-up**, in the Templates Guide: point Templates at `Templates/`, daily notes at `Daily/` with the Daily Note template, new notes at `Inbox/` and attachments at `Attachments/`. The pack does not change your Obsidian settings for you, so your own theme and plugins are never touched by an update.
+- **New `Inbox/` and `Attachments/` folders**, each with a short Guide: capture first, file weekly, and keep large or sensitive files out of the synced vault.
+- **Every folder Guide now follows one shape:** Purpose, Structure, Writing a note, Lifecycle, Frontmatter, Canonical example, Related. The Knowledge Guide now says plainly which files ship and which are optional.
+- **One frontmatter convention**, written down as rule R-07 in `Knowledge/rules.md`: common fields, quoted links, lists as lists, and a small fixed set of status values. Your existing field names are not renamed. Rule R-03 now says notes still in `Inbox/` need no frontmatter until they are filed.
+- **`cyber-essentials-ready` is back at 1.1.0**, with the current (Danzell) question set and two audit fixes. An earlier sync had put it back to 1.0.0.
+- **Removed: `process-interviewer` and `prompt-master`**, because their licences do not allow us to redistribute them. The update does not delete files, so if you already have them they stay in your vault; `/process-map` covers getting a process out of your head.
+- **The curator** now leaves `Inbox/` and `Templates/` alone.
+
+`CLAUDE.md` and `Home.md` are never changed by an update, so existing vaults keep their own copies; new installs get the versions that mention the new folders.
+
 ## 2.1.0, 2026-07-15
 
 Fixes a setup skill that could not enumerate its own files. `footing-setup` Step A.2 called the GitHub `git/trees` API to list the template, but that endpoint returns JSON, which the Cowork WebFetch tool cannot read, so the file list came back empty and the install stalled before writing anything. The individual raw-file fetches worked, which hid the real cause.
