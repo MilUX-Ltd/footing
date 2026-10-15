@@ -38,6 +38,8 @@ Intelligence/
 
 **`sector-landscape/`** holds public reference pages for your sector: the funding programmes, procurement routes, and portals relevant to what you do. Ships empty; populated live at setup by the sector-capture step, and grown from there as you learn your sector's specifics. The `Sector Landscape Index.md` at the root, once you create it, is a map page, not an entity home. Entities live in CRM (`CRM/organisations/`); the landscape pages map their relationships.
 
+**`events/`** holds the events you attend, run, or track. See the [[Intelligence/events/Events Guide|Events Guide]].
+
 **`market/`** is broader market analysis: industry trends, sector reports, dynamics affecting your space.
 
 **`competitors/`** is competitive analysis. One page per competitor, with public-info only. Engagement notes against competitors stay in their CRM page (if they're an organisation you also engage with directly).
@@ -45,6 +47,20 @@ Intelligence/
 **`literature/`** holds notes on public-domain papers, reports, articles you've read. Source material that informed your thinking.
 
 **`decisions/`** holds external decisions (regulatory shifts, market announcements, policy changes) that affect your market. Different from internal decisions, which live with the initiative they belong to.
+
+## Writing an intelligence note
+
+**Public information only.** Intelligence pages should be sourceable from public material: gov.uk or equivalent, company websites, LinkedIn public profiles, published reports. Anything you learned through a private relationship belongs in CRM, not here.
+
+**Maps versus entities.** Index pages and landscape diagrams are maps, not entity homes. If a page has more than one entity's information, it's a map. If it has one entity's information, it's that entity's home. Maps live in `Intelligence/sector-landscape/`; entity homes live in the relevant CRM folder.
+
+**Sector-landscape rebrands.** When a landscape entity restructures, use the parent-folder pattern: a folder named after the parent organisation, with renamed children inside carrying both the new title and `former_name:` frontmatter. Keep search continuity.
+
+**Don't mirror CRM.** If you have a working relationship with a sector-landscape entity, that organisation lives in `CRM/organisations/`. The Intelligence page references the CRM page; it doesn't duplicate it.
+
+## Lifecycle
+
+Landscape entities carry `status: active` or `retired`; mark a page `retired` when the programme, framework or portal it describes has been closed or replaced, and keep the page. Set `last_reviewed:` whenever you check that a page still matches the public source. Market and literature pages carry no status.
 
 ## Frontmatter
 
@@ -73,16 +89,12 @@ tags: [...]
 ---
 ```
 
-## Add discipline
-
-**Public information only.** Intelligence pages should be sourceable from public material: gov.uk or equivalent, company websites, LinkedIn public profiles, published reports. Anything you learned through a private relationship belongs in CRM, not here.
-
-**Maps versus entities.** Index pages and landscape diagrams are maps, not entity homes. If a page has more than one entity's information, it's a map. If it has one entity's information, it's that entity's home. Maps live in `Intelligence/sector-landscape/`; entity homes live in the relevant CRM folder.
-
-**Sector-landscape rebrands.** When a landscape entity restructures, use the parent-folder pattern: a folder named after the parent organisation, with renamed children inside carrying both the new title and `former_name:` frontmatter. Keep search continuity.
-
-**Don't mirror CRM.** If you have a working relationship with a sector-landscape entity, that organisation lives in `CRM/organisations/`. The Intelligence page references the CRM page; it doesn't duplicate it.
-
 ## Canonical example
 
-The shipped Footing defaults ship `sector-landscape/` empty; there is no pre-populated worked example, unlike Foothold's defence corpus. The setup skill's sector-capture step writes your first entries. For entity pages generally, follow the public-info shape: short company-style page with public mission, leadership where named publicly, website, and (where relevant) parent/child relationships via frontmatter.
+The shipped Footing defaults ship `sector-landscape/` empty; there is no pre-populated worked example. The setup skill's sector-capture step writes your first entries. For entity pages generally, follow the public-info shape: short company-style page with public mission, leadership where named publicly, website, and (where relevant) parent/child relationships via frontmatter.
+
+## Related
+
+- [[Intelligence/events/Events Guide|Events Guide]]: events you attend, run or track
+- [[CRM/CRM Guide|CRM Guide]]: where the entities live
+- [[Resources/Resources Guide|Resources Guide]]: the reference library, distinct from external scanning
