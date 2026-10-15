@@ -26,15 +26,17 @@ Intelligence/
 │       └── <Portal name>.md
 ├── events/
 │   └── <events you attend, see Events Guide>
-├── market/
+├── market/  (optional, create when needed)
 │   └── <Market topic>.md
-├── competitors/
+├── competitors/  (optional, create when needed)
 │   └── <Competitor name>.md
-├── literature/
+├── literature/  (optional, create when needed)
 │   └── <Paper, report, article>.md
-└── decisions/
+└── decisions/  (optional, create when needed)
     └── <External decision relevant to your market>.md
 ```
+
+Folders marked optional do not ship; create them when you first need one.
 
 **`sector-landscape/`** holds public reference pages for your sector: the funding programmes, procurement routes, and portals relevant to what you do. Ships empty; populated live at setup by the sector-capture step, and grown from there as you learn your sector's specifics. The `Sector Landscape Index.md` at the root, once you create it, is a map page, not an entity home. Entities live in CRM (`CRM/organisations/`); the landscape pages map their relationships.
 
