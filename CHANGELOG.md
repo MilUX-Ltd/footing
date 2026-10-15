@@ -2,7 +2,7 @@
 
 ## 2.2.0, 2026-10-15
 
-Brings the vault up to how a small firm actually keeps one going: a template for every kind of note, Obsidian set up so new notes and files land in the right place, and Guides that all follow the same shape. Run `/footing-update` to bring it in; nothing you have written is overwritten without your say.
+Brings the vault up to how a small firm actually keeps one going: a template for every kind of note, a one-minute Obsidian set-up so new notes and files land in the right place, and Guides that all follow the same shape. Run `/footing-update` to bring it in; nothing you have written is overwritten without your say.
 
 - **Note templates.** A new `Templates/` folder holds a template for contacts, organisations, customer engagements, initiatives, ideas, daily notes, weekly reviews, meetings, marketing pieces and services. Title and date fields are left blank for you to fill in.
 - **A one-minute Obsidian set-up**, in the Templates Guide: point Templates at `Templates/`, daily notes at `Daily/` with the Daily Note template, new notes at `Inbox/` and attachments at `Attachments/`. The pack does not change your Obsidian settings for you, so your own theme and plugins are never touched by an update.
