@@ -6,7 +6,6 @@ Thumbs.db
 
 # Obsidian per-user state (don't ship workspace layout to clients)
 **/.obsidian/workspace.json
-**/.obsidian/workspace-mobile.json
 **/.obsidian/workspaces.json
 **/.obsidian/cache
 **/.obsidian/cache-v2
@@ -19,3 +18,8 @@ Thumbs.db
 .vscode/
 *.swp
 *.swo
+
+
+# A sync tool's local index of the folder; never published (LESSONS 2)
+.context/
+__pycache__/
