@@ -111,7 +111,7 @@ Footing is built for a single operator working with Cowork, and that is how it s
 
 Around sixty skills ship with the pack, in seven categories. The high points:
 
-- **meta-skills.** The pack's own lifecycle and hygiene: `footing-setup`, `footing-update`, `sector-scan` (re-runs your install-time sector research monthly and reports what changed), `daily-brief` (writes your morning brief), `curator` (a budgeted monthly hygiene sweep), `skill-safety-audit` (run on any skill from outside before it runs, no exceptions), `skill-value-review`, `prompt-master`, `process-interviewer`.
+- **meta-skills.** The pack's own lifecycle and hygiene: `footing-setup`, `footing-update`, `sector-scan` (re-runs your install-time sector research monthly and reports what changed), `daily-brief` (writes your morning brief), `curator` (a budgeted monthly hygiene sweep), `skill-safety-audit` (run on any skill from outside before it runs, no exceptions), `skill-value-review`.
 - **crm-skills.** The high-frequency adds and their payoff: `add-contact`, `add-organisation` (classified by relationship type, with rename support), `add-event` (with a Chatham House Rule check at intake), `meeting-prep`, `mobilise-engagement`, and `import-relationships` for bringing your existing CRM across, connector-first, with triage so only living relationships come in.
 - **business-skills.** `write-sow`, `cyber-essentials-ready`, `build-dpia`, `red-team-investor`, `late-payment-reminder`.
 - **pm-skills.** Twenty-six business-method reference skills (prioritisation, positioning, research synthesis, competitive analysis, pricing, personas, pre-mortems and more), stripped of sector-specific framing so they apply to whatever business you run.
