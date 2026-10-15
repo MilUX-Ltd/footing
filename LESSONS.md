@@ -20,5 +20,5 @@ same commit; `tools/check.py` fails when the two are out of step.
    `footing-setup` listed the template through the GitHub `git/trees` API, which returns JSON
    that the Cowork WebFetch tool cannot read. The file list came back empty and the install
    stalled before writing anything, while single raw-file fetches worked and hid the cause.
-   Rule: setup installs from the template bundled in the plugin, offline; only the update skill
-   talks to GitHub.
+   Rule: setup never lists the template through the GitHub tree API, and an install route is
+   walked end to end before a release that changes it ships.

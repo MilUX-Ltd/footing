@@ -3,10 +3,9 @@
 Footing is an installable Obsidian vault pack for established businesses, charities, small firms
 and founders bringing AI into how they work: a folder structure, page templates and skills, with
 sector reference pages researched for each user at setup. It is the sibling of Foothold (the
-defence-sector pack). A user installs it with one prompt in Cowork that runs the setup skill,
-which lays the vault down from the template in the Footing plugin, and keeps it current with an
-update skill that reads this repository. It is public and free; the README says MIT licensed,
-but there is no `LICENSE` file yet (risk R2 in `docs/security/risk-register.md`).
+defence-sector pack). The README says how to install it; an update skill in the installed vault
+keeps it current from this repository. It is public and free; the README says MIT licensed, but
+there is no `LICENSE` file yet (risk R2 in `docs/security/risk-register.md`).
 
 Read this, then `LESSONS-INDEX.md`, then `CONTEXT.md`. For recent movement run
 `git log --oneline -20`; read `CHANGELOG.md` by section, never whole. `docs/architecture.md`
@@ -17,7 +16,7 @@ explains the pack's structure and how setup and update work.
 | Path | What it is |
 |---|---|
 | `footing/template/` | The vault itself. Everything here is what a user's vault receives. |
-| `footing/skills/footing-setup/SKILL.md` | The setup skill. It installs from the template in the plugin (`<plugin>/template/`), offline. |
+| `footing/skills/footing-setup/SKILL.md` | The setup skill: lays the vault down and runs onboarding. The README says how a user starts it. |
 | `footing/template/Skills/meta-skills/footing-update/` | The update skill, shipped into the vault. It reads `main` on GitHub. |
 | `tools/vault-viewer/` | A browser viewer for a vault, for people who want to look before installing. |
 | `tools/check.py` | The repository's gate. CI runs it on every pull request. |
