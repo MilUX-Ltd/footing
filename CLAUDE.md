@@ -3,9 +3,10 @@
 Footing is an installable Obsidian vault pack for established businesses, charities, small firms
 and founders bringing AI into how they work: a folder structure, page templates and skills, with
 sector reference pages researched for each user at setup. It is the sibling of Foothold (the
-defence-sector pack). A user installs it with one prompt in Cowork that fetches the setup skill
-from this repository; there is no plugin and no marketplace step. It is public and free; the
-README says MIT licensed, but there is no `LICENSE` file yet (risk R3 in
+defence-sector pack). A user installs it with one prompt
+in Cowork that runs the setup skill, which lays the vault down from the template in the Footing
+plugin, and keeps it current with an update skill that reads this repository. It is public and
+free; the README says MIT licensed, but there is no `LICENSE` file yet (risk R2 in
 `docs/security/risk-register.md`).
 
 Read this, then `LESSONS-INDEX.md`, then `CONTEXT.md`. For recent movement run
@@ -17,7 +18,7 @@ explains the pack's structure and how setup and update work.
 | Path | What it is |
 |---|---|
 | `footing/template/` | The vault itself. Everything here is what a user's vault receives. |
-| `footing/skills/footing-setup/SKILL.md` | The setup skill. A user's first prompt fetches it from `main` and follows it. |
+| `footing/skills/footing-setup/SKILL.md` | The setup skill. It installs from the template in the plugin (`<plugin>/template/`), offline. |
 | `footing/template/Skills/meta-skills/footing-update/` | The update skill, shipped into the vault. It reads `main` on GitHub. |
 | `tools/vault-viewer/` | A browser viewer for a vault, for people who want to look before installing. |
 | `tools/check.py` | The repository's gate. CI runs it on every pull request. |
@@ -25,21 +26,16 @@ explains the pack's structure and how setup and update work.
 
 ## How changes reach users
 
-- **`main` is the release channel.** New users fetch the setup skill from `main`
-  (`raw.githubusercontent.com/MilUX-Ltd/footing/main/footing/skills/footing-setup/SKILL.md`),
-  and a user's `/footing-update` pulls every changed file under `footing/template/` from `main`.
-  Merging publishes (ADR 002). There is no staging copy.
+- **`main` is the release channel for updates.** A user's `/footing-update` pulls every
+  changed file under `footing/template/` from `main`, so merging publishes (ADR 002). There is
+  no staging copy.
 - Work on a branch and merge by pull request only. `main` is protected: the `checks` job must
   pass. Never push to `main`.
 - This repository is the only source of the pack (ADR 001). Change it in a clone, by pull request.
-- **Install is one prompt, by design** (`docs/architecture.md`): setup and update fetch plain
-  files over HTTPS. Never reintroduce a plugin or marketplace step. The 2.1.0 setup skill departs
-  from this by looking for a template under `~/.claude/plugins/` (risk R5), and the update skill
-  reads a `footing/.claude-plugin/plugin.json` that this repository does not have.
 - Footing and Foothold share most skills. A fix to a shared skill usually belongs in both
   repositories; say in the pull request whether the other one has it.
-- A release adds a version heading to `CHANGELOG.md`. If a version file is added for the update
-  skill to read, `tools/check.py` holds it to the changelog's version.
+- A release adds a version heading to `CHANGELOG.md`. If a plugin manifest is added,
+  `tools/check.py` holds its version to the changelog's.
 - A change to a skill's behaviour gets a fresh `skill-safety-audit` before the release that
   carries it; record the audit in the skill's frontmatter.
 - A template file that contains `{{pack_owner}}` must be added to the hard-coded list in the
