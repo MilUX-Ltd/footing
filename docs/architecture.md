@@ -20,19 +20,22 @@ The pack ships in three layers.
 Your Pack/
 ├── CLAUDE.md
 ├── Home.md
+├── Attachments/
 ├── Capabilities and Services/
 ├── Context/
 ├── CRM/
 ├── Customer Engagements/
 ├── Daily/
 ├── Ideas/
+├── Inbox/
 ├── Initiatives/
 ├── Intelligence/
 ├── Knowledge/
 ├── Marketing/
 ├── Operations/
 ├── Resources/
-└── Skills/
+├── Skills/
+└── Templates/
 ```
 
 The pack is a flat top-level. No nested namespaces. Wikilink paths stay short and the mental model stays simple.
@@ -55,7 +58,7 @@ The pack is a flat top-level. No nested namespaces. Wikilink paths stay short an
 
 **Intelligence.** External-facing scanning: events, and `sector-landscape/` (`Frameworks/`, `Portals/`, `Programmes/`). Unlike a pre-populated version of this folder, Footing's `sector-landscape/` ships empty and is filled once, at setup, by the `footing-setup` skill's live research pass, scoped to the sector you name. The Guide codifies the "this is for external scanning, not internal artefacts" rule so the folder stays clean.
 
-**Knowledge.** Agent operating rules: the rules file, frontmatter conventions, tagging policy. Distinct from Resources, which is your practitioner reference library. Knowledge files are policy documents your agents read at runtime.
+**Knowledge.** Agent operating rules: the rules file (which holds the frontmatter convention) and the tagging policy, with optional pages for hypotheses, domain notes and reviews when you need them. Distinct from Resources, which is your practitioner reference library. Knowledge files are policy documents your agents read at runtime.
 
 **Marketing.** Marketing Outputs (published artefacts and active drafts) and Newsletter content. Footing's three-layer marketing pattern keeps strategy in `Capabilities and Services/Internal Services/Content Pillars.md`, workflow in `Capabilities and Services/Internal Services/Content Creation Workflow.md`, and outputs here in Marketing. Marketing is a function you run.
 
@@ -65,17 +68,25 @@ The pack is a flat top-level. No nested namespaces. Wikilink paths stay short an
 
 **Skills.** The agent skills that ship with the pack, organised into `pm-skills/` (business-method reference skills), `business-skills/`, `crm-skills/`, `content-skills/`, `brand-skills/`, and `meta-skills/`. Skills are executable. The content they draw on lives elsewhere in the vault.
 
+**Inbox.** Where new notes land before you file them. Capture first, file weekly; nothing lives here for good. Obsidian is set to create new notes here.
+
+**Attachments.** Where Obsidian saves files you paste or drop into a note. Kept small: large or sensitive files stay out of the synced vault and are linked instead.
+
+**Templates.** Note templates for the Obsidian Templates plugin, one per note type the Guides define (contact, organisation, customer engagement, initiative, idea, daily note, weekly review, meeting, marketing output, service). Not to be confused with `Resources/Templates/`, which holds document templates such as a pitch deck. The pack's `.obsidian/` settings point new notes at `Inbox/`, attachments at `Attachments/`, daily notes at `Daily/` and the template folder at `Templates/`.
+
 ## The Guide pattern
 
 Every major folder ships with a `<Folder Name> Guide.md` at its root. The Guide is the contract for what belongs in the folder.
 
-Every Guide carries five sections:
+Every Guide carries the same seven sections, in the same order:
 
 1. **Purpose.** One paragraph. What this folder is for.
 2. **Structure.** What each subfolder means.
-3. **Frontmatter.** Required and optional fields per page type.
-4. **Add discipline.** How to add new content. Points at the relevant skill if one exists.
-5. **Canonical example.** A worked reference page so you can see what good looks like.
+3. **Writing a note.** How to add new content, named for the note type (for example "Writing a contact"). Points at the relevant skill and template if one exists.
+4. **Lifecycle.** The statuses a note can take and what moves it between them, or a line saying statuses are optional.
+5. **Frontmatter.** Required and optional fields per page type, following the vault's frontmatter convention (rule R-07 in `Knowledge/rules.md`).
+6. **Canonical example.** A worked reference page or template so you can see what good looks like.
+7. **Related.** Neighbouring Guides.
 
 When you're not sure where something goes, read the relevant Guide. When you can't decide between two folders, the Guide tells you.
 
