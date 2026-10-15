@@ -3,8 +3,10 @@
 Footing is an installable Obsidian vault pack for established businesses, charities, small firms
 and founders bringing AI into how they work: a folder structure, page templates and skills, with
 sector reference pages researched for each user at setup. It is the sibling of Foothold (the
-defence-sector pack). It is public and free; the README says MIT licensed, but there is no
-`LICENSE` file yet (risk R3 in `docs/security/risk-register.md`).
+defence-sector pack). A user installs it with one prompt in Cowork that fetches the setup skill
+from this repository; there is no plugin and no marketplace step. It is public and free; the
+README says MIT licensed, but there is no `LICENSE` file yet (risk R3 in
+`docs/security/risk-register.md`).
 
 Read this, then `LESSONS-INDEX.md`, then `CONTEXT.md`. For recent movement run
 `git log --oneline -20`; read `CHANGELOG.md` by section, never whole. `docs/architecture.md`
@@ -33,10 +35,14 @@ explains the pack's structure and how setup and update work.
   Never push to `main`, never merge with `--admin`.
 - GitHub is the only source (ADR 001). There is no vault copy and no sync job. Work in a clone of
   this repository; never edit a copy in a synoia vault and push it.
+- **Install is one prompt, by design** (`docs/architecture.md`): setup and update fetch plain
+  files over HTTPS. Never reintroduce a plugin or marketplace step. The 2.1.0 setup skill departs
+  from this by looking for a template under `~/.claude/plugins/` (risk R5), and the update skill
+  reads a `footing/.claude-plugin/plugin.json` that this repository does not have.
 - Footing and Foothold share most skills. A fix to a shared skill usually belongs in both
   repositories; say in the pull request whether the other one has it.
-- A release adds a version heading to `CHANGELOG.md`. Footing has no plugin manifest; if one is
-  added, `tools/check.py` holds its version to the changelog's.
+- A release adds a version heading to `CHANGELOG.md`. If a version file is added for the update
+  skill to read, `tools/check.py` holds it to the changelog's version.
 - A change to a skill's behaviour needs a fresh `skill-safety-audit` before the release that
   carries it (R-28); record the audit in the skill's frontmatter.
 - A template file that contains `{{pack_owner}}` must be added to the hard-coded list in the

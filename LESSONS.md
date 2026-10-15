@@ -26,5 +26,7 @@ the rule that came out of it. `LESSONS-INDEX.md` lists them one line each; regen
    `footing-setup` listed the template through the GitHub `git/trees` API, which returns JSON
    that the Cowork WebFetch tool cannot read. The file list came back empty and the install
    stalled before writing anything, while single raw-file fetches worked and hid the cause.
-   Rule: setup does not enumerate the template over the GitHub API; only the update skill talks
-   to the tree API. Neither install nor update has been proven end to end since (risk R5).
+   The 2.1.0 fix made setup read a template bundled in an installed plugin, but the install is
+   one prompt with no plugin, so the fix swapped one broken route for another (risk R5). Rule:
+   setup and update fetch plain files by raw URL, never JSON through WebFetch; check any change
+   to setup against the one-prompt design in `docs/architecture.md` before it ships.
