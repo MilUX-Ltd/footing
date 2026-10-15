@@ -5,7 +5,7 @@
 Brings the vault up to how a small firm actually keeps one going: a template for every kind of note, Obsidian set up so new notes and files land in the right place, and Guides that all follow the same shape. Run `/footing-update` to bring it in; nothing you have written is overwritten without your say.
 
 - **Note templates.** A new `Templates/` folder holds a template for contacts, organisations, customer engagements, initiatives, ideas, daily notes, weekly reviews, meetings, marketing pieces and services. Title and date fields are left blank for you to fill in.
-- **Obsidian settings ship with the pack for the first time.** New notes land in `Inbox/`, pasted files go to `Attachments/`, and the daily note uses its template. If you already have your own Obsidian settings, the update asks before changing them.
+- **Obsidian settings ship with the pack for the first time.** New notes land in `Inbox/`, pasted files go to `Attachments/`, and the daily note uses its template. If you already have your own Obsidian settings, check the settings files the update lists before you accept them.
 - **New `Inbox/` and `Attachments/` folders**, each with a short Guide: capture first, file weekly, and keep large or sensitive files out of the synced vault.
 - **Every folder Guide now follows one shape:** Purpose, Structure, Writing a note, Lifecycle, Frontmatter, Canonical example, Related. The Knowledge Guide now says plainly which files ship and which are optional.
 - **One frontmatter convention**, written down as rule R-07 in `Knowledge/rules.md`: common fields, quoted links, lists as lists, and a small fixed set of status values. Your existing field names are not renamed.
