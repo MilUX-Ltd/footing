@@ -39,7 +39,7 @@ tags: [...]
 
 ## Canonical example
 
-Your first page sets the pattern: a short summary at the top, the reference material, and the source named in the frontmatter.
+`Cash Flow Basics.md` sets the pattern: a short summary at the top, the reference material, and the source named in the frontmatter.
 
 ## Related
 

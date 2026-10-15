@@ -48,4 +48,4 @@ See [[Resources/Frameworks/Pitch - the three-act structure|Pitch - the three-act
 
 - [[Resources/Resources Guide|Resources Guide]] — parent
 - [[Resources/Methods/Methods Guide|Methods Guide]] — sibling (methodology theory)
-- `Intelligence/sector-landscape/Frameworks/`: distinct: commercial procurement routes, ships empty
+- `Intelligence/sector-landscape/Frameworks/` — distinct: commercial procurement routes, ships empty
